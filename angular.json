@@ -1,5 +1,8 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": false
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -97,6 +100,37 @@
               "src/styles.css"
             ],
             "scripts": []
+          }
+        }
+      }
+    },
+    "ng-animate": {
+      "projectType": "library",
+      "root": "projects/ng-animate",
+      "sourceRoot": "projects/ng-animate/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/ng-animate/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ng-animate/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ng-animate/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ng-animate/src/test.ts",
+            "tsConfig": "projects/ng-animate/tsconfig.spec.json",
+            "karmaConfig": "projects/ng-animate/karma.conf.js"
           }
         }
       }
