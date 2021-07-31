@@ -20,6 +20,8 @@ import {
   flipInY,
   flipOutX,
   flipOutY,
+  headShake,
+  heartBeat,
   hinge,
   jackInTheBox,
   jello,
@@ -35,7 +37,8 @@ import {
   rotateOutDownRight,
   rotateOutUpLeft,
   rubberBand,
-  shake,
+  shakeX,
+  shakeY,
   slideInDown,
   slideInLeft,
   slideOutRight,
@@ -62,11 +65,14 @@ import {
     trigger('flash', [transition('* => *', useAnimation(flash))]),
     trigger('pulse', [transition('* => *', useAnimation(pulse))]),
     trigger('rubberBand', [transition('* => *', useAnimation(rubberBand))]),
-    trigger('shake', [transition('* => *', useAnimation(shake))]),
+    trigger('shakeX', [transition('* => *', useAnimation(shakeX))]),
+    trigger('shakeY', [transition('* => *', useAnimation(shakeY))]),
+    trigger('headShake', [transition('* => *', useAnimation(headShake))]),
     trigger('swing', [transition('* => *', useAnimation(swing))]),
     trigger('tada', [transition('* => *', useAnimation(tada))]),
     trigger('wobble', [transition('* => *', useAnimation(wobble))]),
     trigger('jello', [transition('* => *', useAnimation(jello))]),
+    trigger('heartBeat', [transition('* => *', useAnimation(heartBeat))]),
 
     trigger('bounceIn', [transition('* => *', useAnimation(bounceIn))]),
     trigger('bounceInDown', [transition('* => *', useAnimation(bounceInDown))]),
@@ -135,22 +141,28 @@ export class AppComponent {
   flash = false;
   pulse = false;
   rubberBand = false;
-  shake = false;
+  shakeX = false;
+  shakeY = false;
+  headShake = false;
   swing = false;
   tada = false;
   wobble = false;
   jello = false;
+  heartBeat = false;
 
   attentionSeekers = [
     'bounce',
     'flash',
     'pulse',
     'rubberBand',
-    'shake',
+    'shakeX',
+    'shakeY',
+    'headShake',
     'swing',
     'tada',
     'wobble',
-    'jello'
+    'jello',
+    'heartBeat'
   ];
 
   // ==================
