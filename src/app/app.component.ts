@@ -1,19 +1,51 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { transition, trigger, useAnimation } from '@angular/animations';
 import {
+  backInDown,
+  backInLeft,
+  backInRight,
+  backInUp,
+  backOutDown,
+  backOutLeft,
+  backOutRight,
+  backOutUp,
   bounce,
   bounceIn,
   bounceInDown,
   bounceInLeft,
+  bounceInRight,
+  bounceInUp,
   bounceOut,
+  bounceOutDown,
+  bounceOutLeft,
   bounceOutRight,
   bounceOutUp,
   fadeIn,
+  fadeInBottomLeft,
+  fadeInBottomRight,
   fadeInDown,
+  fadeInDownBig,
   fadeInLeft,
+  fadeInLeftBig,
+  fadeInRight,
+  fadeInRightBig,
+  fadeInTopLeft,
+  fadeInTopRight,
+  fadeInUp,
+  fadeInUpBig,
   fadeOut,
+  fadeOutBottomLeft,
+  fadeOutBottomRight,
+  fadeOutDown,
+  fadeOutDownBig,
+  fadeOutLeft,
+  fadeOutLeftBig,
   fadeOutRight,
+  fadeOutRightBig,
+  fadeOutTopLeft,
+  fadeOutTopRight,
   fadeOutUp,
+  fadeOutUpBig,
   flash,
   flip,
   flipInX,
@@ -41,6 +73,10 @@ import {
   shakeY,
   slideInDown,
   slideInLeft,
+  slideInRight,
+  slideInUp,
+  slideOutDown,
+  slideOutLeft,
   slideOutRight,
   slideOutUp,
   swing,
@@ -63,39 +99,76 @@ import {
   animations: [
     trigger('bounce', [transition('* => *', useAnimation(bounce))]),
     trigger('flash', [transition('* => *', useAnimation(flash))]),
+    trigger('headShake', [transition('* => *', useAnimation(headShake))]),
+    trigger('heartBeat', [transition('* => *', useAnimation(heartBeat))]),
+    trigger('jello', [transition('* => *', useAnimation(jello))]),
     trigger('pulse', [transition('* => *', useAnimation(pulse))]),
     trigger('rubberBand', [transition('* => *', useAnimation(rubberBand))]),
     trigger('shakeX', [transition('* => *', useAnimation(shakeX))]),
     trigger('shakeY', [transition('* => *', useAnimation(shakeY))]),
-    trigger('headShake', [transition('* => *', useAnimation(headShake))]),
     trigger('swing', [transition('* => *', useAnimation(swing))]),
     trigger('tada', [transition('* => *', useAnimation(tada))]),
     trigger('wobble', [transition('* => *', useAnimation(wobble))]),
-    trigger('jello', [transition('* => *', useAnimation(jello))]),
-    trigger('heartBeat', [transition('* => *', useAnimation(heartBeat))]),
+
+    trigger('backInDown', [transition('* => *', useAnimation(backInDown))]),
+    trigger('backInLeft', [transition('* => *', useAnimation(backInLeft))]),
+    trigger('backInUp', [transition('* => *', useAnimation(backInUp))]),
+    trigger('backInRight', [transition('* => *', useAnimation(backInRight))]),
+
+    trigger('backOutDown', [transition('* => *', useAnimation(backOutDown))]),
+    trigger('backOutLeft', [transition('* => *', useAnimation(backOutLeft))]),
+    trigger('backOutUp', [transition('* => *', useAnimation(backOutUp))]),
+    trigger('backOutRight', [transition('* => *', useAnimation(backOutRight))]),
 
     trigger('bounceIn', [transition('* => *', useAnimation(bounceIn))]),
     trigger('bounceInDown', [transition('* => *', useAnimation(bounceInDown))]),
     trigger('bounceInLeft', [transition('* => *', useAnimation(bounceInLeft))]),
+    trigger('bounceInRight', [transition('* => *', useAnimation(bounceInRight))]),
+    trigger('bounceInUp', [transition('* => *', useAnimation(bounceInUp))]),
+
     trigger('bounceOut', [transition('* => *', useAnimation(bounceOut))]),
-    trigger('bounceOutRight', [
-      transition('* => *', useAnimation(bounceOutRight))
-    ]),
+    trigger('bounceOutLeft', [transition('* => *', useAnimation(bounceOutLeft))]),
+    trigger('bounceOutRight', [transition('* => *', useAnimation(bounceOutRight))]),
     trigger('bounceOutUp', [transition('* => *', useAnimation(bounceOutUp))]),
+    trigger('bounceOutDown', [transition('* => *', useAnimation(bounceOutDown))]),
 
     trigger('fadeIn', [transition('* => *', useAnimation(fadeIn))]),
     trigger('fadeInDown', [transition('* => *', useAnimation(fadeInDown))]),
+    trigger('fadeInDownBig', [transition('* => *', useAnimation(fadeInDownBig))]),
     trigger('fadeInLeft', [transition('* => *', useAnimation(fadeInLeft))]),
+    trigger('fadeInLeftBig', [transition('* => *', useAnimation(fadeInLeftBig))]),
+    trigger('fadeInRight', [transition('* => *', useAnimation(fadeInRight))]),
+    trigger('fadeInRightBig', [transition('* => *', useAnimation(fadeInRightBig))]),
+    trigger('fadeInUp', [transition('* => *', useAnimation(fadeInUp))]),
+    trigger('fadeInUpBig', [transition('* => *', useAnimation(fadeInUpBig))]),
+    trigger('fadeInTopLeft', [transition('* => *', useAnimation(fadeInTopLeft))]),
+    trigger('fadeInTopRight', [transition('* => *', useAnimation(fadeInTopRight))]),
+    trigger('fadeInBottomLeft', [transition('* => *', useAnimation(fadeInBottomLeft))]),
+    trigger('fadeInBottomRight', [transition('* => *', useAnimation(fadeInBottomRight))]),
+
     trigger('fadeOut', [transition('* => *', useAnimation(fadeOut))]),
-    trigger('fadeOutUp', [transition('* => *', useAnimation(fadeOutUp))]),
+    trigger('fadeOutDown', [transition('* => *', useAnimation(fadeOutDown))]),
+    trigger('fadeOutDownBig', [transition('* => *', useAnimation(fadeOutDownBig))]),
+    trigger('fadeOutLeft', [transition('* => *', useAnimation(fadeOutLeft))]),
+    trigger('fadeOutLeftBig', [transition('* => *', useAnimation(fadeOutLeftBig))]),
     trigger('fadeOutRight', [transition('* => *', useAnimation(fadeOutRight))]),
+    trigger('fadeOutRightBig', [transition('* => *', useAnimation(fadeOutRightBig))]),
+    trigger('fadeOutUp', [transition('* => *', useAnimation(fadeOutUp))]),
+    trigger('fadeOutUpBig', [transition('* => *', useAnimation(fadeOutUpBig))]),
+    trigger('fadeOutTopLeft', [transition('* => *', useAnimation(fadeOutTopLeft))]),
+    trigger('fadeOutTopRight', [transition('* => *', useAnimation(fadeOutTopRight))]),
+    trigger('fadeOutBottomLeft', [transition('* => *', useAnimation(fadeOutBottomLeft))]),
+    trigger('fadeOutBottomRight', [transition('* => *', useAnimation(fadeOutBottomRight))]),
 
     trigger('slideInDown', [transition('* => *', useAnimation(slideInDown))]),
     trigger('slideInLeft', [transition('* => *', useAnimation(slideInLeft))]),
+    trigger('slideInRight', [transition('* => *', useAnimation(slideInRight))]),
+    trigger('slideInUp', [transition('* => *', useAnimation(slideInUp))]),
+
+    trigger('slideOutDown', [transition('* => *', useAnimation(slideOutDown))]),
+    trigger('slideOutLeft', [transition('* => *', useAnimation(slideOutLeft))]),
     trigger('slideOutUp', [transition('* => *', useAnimation(slideOutUp))]),
-    trigger('slideOutRight', [
-      transition('* => *', useAnimation(slideOutRight))
-    ]),
+    trigger('slideOutRight', [transition('* => *', useAnimation(slideOutRight))]),
 
     trigger('flip', [transition('* => *', useAnimation(flip))]),
     trigger('flipInX', [transition('* => *', useAnimation(flipInX))]),
@@ -167,50 +240,155 @@ export class AppComponent {
 
   // ==================
 
+  backInDown = false;
+  backInLeft = false;
+  backInRight = false;
+  backInUp = false;
+
+  backEntrances = [
+    'backInDown',
+    'backInLeft',
+    'backInRight',
+    'backInUp',
+  ];
+
+  // ==================
+
+  backOutDown = false;
+  backOutLeft = false;
+  backOutRight = false;
+  backOutUp = false;
+
+  backExits = [
+    'backOutDown',
+    'backOutLeft',
+    'backOutRight',
+    'backOutUp'
+  ];
+
+  // ==================
+
   bounceIn = false;
   bounceInDown = false;
   bounceInLeft = false;
-  bounceOut = false;
-  bounceOutUp = false;
-  bounceOutRight = false;
+  bounceInRight = false;
+  bounceInUp = false;
 
-  bouncing = [
+  bouncingEntrances = [
     'bounceIn',
     'bounceInDown',
     'bounceInLeft',
+    'bounceInRight',
+    'bounceInUp'
+  ];
+
+  // ==================
+
+  bounceOut = false;
+  bounceOutDown = false;
+  bounceOutLeft = false;
+  bounceOutRight = false;
+  bounceOutUp = false;
+
+  bouncingExits = [
     'bounceOut',
+    'bounceOutDown',
+    'bounceOutLeft',
+    'bounceOutRight',
     'bounceOutUp',
-    'bounceOutRight'
   ];
 
   // ==================
 
   fadeIn = false;
   fadeInDown = false;
+  fadeInDownBig = false;
   fadeInLeft = false;
-  fadeOut = false;
-  fadeOutUp = false;
-  fadeOutRight = false;
+  fadeInLeftBig = false;
+  fadeInRight = false;
+  fadeInRightBig = false;
+  fadeInUp = false;
+  fadeInUpBig = false;
+  fadeInTopLeft = false;
+  fadeInTopRight = false;
+  fadeInBottomLeft = false;
+  fadeInBottomRight = false;
+
+  fadingEntrances = [
+    'fadeIn',
+    'fadeInDown',
+    'fadeInDownBig',
+    'fadeInLeft',
+    'fadeInLeftBig',
+    'fadeInRight',
+    'fadeInRightBig',
+    'fadeInUp',
+    'fadeInUpBig',
+    'fadeInTopLeft',
+    'fadeInTopRight',
+    'fadeInBottomLeft',
+    'fadeInBottomRight',
+  ];
 
   // ==================
 
-  fading = [
-    'fadeIn',
-    'fadeInDown',
-    'fadeInLeft',
+  fadeOut = false;
+  fadeOutDown = false;
+  fadeOutDownBig = false;
+  fadeOutLeft = false;
+  fadeOutLeftBig = false;
+  fadeOutRight = false;
+  fadeOutRightBig = false;
+  fadeOutUp = false;
+  fadeOutUpBig = false;
+  fadeOutTopLeft = false;
+  fadeOutTopRight = false;
+  fadeOutBottomLeft = false;
+  fadeOutBottomRight = false;
+
+  fadingExits = [
     'fadeOut',
+    'fadeOutDown',
+    'fadeOutDownBig',
+    'fadeOutLeft',
+    'fadeOutLeftBig',
+    'fadeOutRight',
+    'fadeOutRightBig',
     'fadeOutUp',
-    'fadeOutRight'
+    'fadeOutUpBig',
+    'fadeOutTopLeft',
+    'fadeOutTopRight',
+    'fadeOutBottomLeft',
+    'fadeOutBottomRight',
   ];
 
   // ==================
 
   slideInDown = false;
   slideInLeft = false;
-  slideOutUp = false;
-  slideOutRight = false;
+  slideInRight = false;
+  slideInUp = false;
 
-  sliding = ['slideInDown', 'slideInLeft', 'slideOutUp', 'slideOutRight'];
+  slidingEntrances = [
+    'slideInDown',
+    'slideInLeft',
+    'slideInRight',
+    'slideInUp',
+  ];
+
+  // ==================
+
+  slideOutDown = false;
+  slideOutLeft = false;
+  slideOutRight = false;
+  slideOutUp = false;
+
+  slidingExits = [
+    'slideOutDown',
+    'slideOutLeft',
+    'slideOutRight',
+    'slideOutUp',
+  ];
 
   // ==================
 
